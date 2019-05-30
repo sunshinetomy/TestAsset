@@ -6,9 +6,11 @@ using System.Collections.Generic;
 static public class AssetBundleManager {
    // A dictionary to hold the AssetBundle references
    static private Dictionary<string, AssetBundleRef> dictAssetBundleRefs;
+
    static AssetBundleManager (){
        dictAssetBundleRefs = new Dictionary<string, AssetBundleRef>();
    }
+
    // Class with the AssetBundle reference, url and version
    private class AssetBundleRef {
        public AssetBundle assetBundle = null;
@@ -19,6 +21,7 @@ static public class AssetBundleManager {
            version = intVersionIn;
        }
    };
+
    // Get an AssetBundle
    public static AssetBundle getAssetBundle (string url, int version){
        string keyName = url + version.ToString();
@@ -28,6 +31,7 @@ static public class AssetBundleManager {
        else
            return null;
    }
+
    // Download an AssetBundle
    public static IEnumerator downloadAssetBundle (string url, int version){
        string keyName = url + version.ToString();
@@ -47,6 +51,7 @@ static public class AssetBundleManager {
            }
        }
    }
+
    // Unload an AssetBundle
    public static void Unload (string url, int version, bool allObjects = true){
        string keyName = url + version.ToString();

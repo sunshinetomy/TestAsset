@@ -19,7 +19,8 @@ public class TestAssetBundleBuilder : EditorWindow
 				assetNames = new string[] {
 					"Assets/Bundles/Sprites/Icon_Com_Shop_Coin_002.png",
 					"Assets/Bundles/Sprites/Icon_Com_Shop_Heart_002.png",
-					"Assets/Bundles/Sprites/Icon_Com_Shop_Ruby_002.png"
+					"Assets/Bundles/Sprites/Icon_Com_Shop_Ruby_002.png",
+					"Assets/Bundles/Sprites/elephant-3177249.jpg"
 				}
 			},
 			new AssetBundleBuild()
@@ -31,7 +32,7 @@ public class TestAssetBundleBuilder : EditorWindow
 			}
 		};
 
-		BuildPipeline.BuildAssetBundles(@"C:\workspace_EDM\TestAsset\Assets", assetBundleBuildList.ToArray(), BuildAssetBundleOptions.CompleteAssets, BuildTarget.Android);
+		BuildPipeline.BuildAssetBundles(Environment.CurrentDirectory + "/BundleOutput", assetBundleBuildList.ToArray(), BuildAssetBundleOptions.CompleteAssets, BuildTarget.Android);
 
 		EditorUtility.DisplayDialog( "alert", "complete Assetbundles Build", "ok" );
 	}
